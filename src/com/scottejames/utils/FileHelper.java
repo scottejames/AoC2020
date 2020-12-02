@@ -66,6 +66,16 @@ public class FileHelper {
         return result;
 
     }
+
+    public static int countChar(char c, String data){
+        int count = 0;
+        for (int i = 0; i < data.length(); i++) {
+            if (data.charAt(i) == c) {
+                count++;
+            }
+        }
+        return count;
+    }
     public static int[] StringArrayToInt(String [] array){
         int [] result = new int[array.length];
         for (int i = 0 ; i < array.length; i++){
