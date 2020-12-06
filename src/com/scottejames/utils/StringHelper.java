@@ -1,5 +1,8 @@
 package com.scottejames.utils;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class StringHelper {
 
     public static boolean containsLettersAndNumbers(String str){
@@ -17,5 +20,13 @@ public class StringHelper {
 
     }
 
+    public static Set<Character> stringToCharSet(String s){
+        Set<Character> result = new HashSet<>();
+
+        for (char c: s.toCharArray()){
+            result.add(c);
+        }
+        return result;
+    }
 
 }
