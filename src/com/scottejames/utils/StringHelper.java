@@ -12,5 +12,10 @@ public class StringHelper {
 
     }
 
+    public static long countCharInString(char c, String s){
+        return  s.chars().filter(ch -> ch == c).count();
+
+    }
+
 
 }
