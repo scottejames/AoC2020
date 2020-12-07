@@ -34,6 +34,18 @@ public class DaySeven {
             }
         }
     }
+    public static int countChildrenBags(List<Bag> bagList, String color) {
+        int count = 0;
+        for (Bag b: bagList){
+            if (b.colour.equals(color)) {
+                for (String inner: b.containedBags.keySet()){
+                    count += b.containedBags.get(inner);
+                    count += b.containedBags.get(inner) * countChildrenBags(bagList,inner);
+                }
+            }
+        }
+        return count;
+    }
 
 
     public static void main(String [] args){
@@ -49,9 +61,10 @@ public class DaySeven {
         List<Bag> results = new ArrayList<>();
 
         findMatchingBag(listOfBags,results,"shiny gold");
-//        System.out.println("results" + results);
-
+        int count = countChildrenBags(listOfBags,"shiny gold");
         System.out.println("Part 1: " + results.size());
+        System.out.println("Part 2: " + count);
+
     }
     public static Bag parseInput(String line){
 
