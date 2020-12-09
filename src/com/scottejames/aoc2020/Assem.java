@@ -42,7 +42,6 @@ public class Assem {
                     break;
                 case Instruction.JMP:
                     programCounter += instr.getArgument();
-
                     break;
                 case Instruction.NOP:
                     programCounter++;
@@ -58,6 +57,8 @@ public class Assem {
                 executed.add(programCounter);
             }
         }
+        System.out.println("LOOPS, BREAKING");
+
         return -1;
 
     }
