@@ -52,10 +52,8 @@ public class DayNine {
             long max = 0;
             while (sum < target) {
                 long incr = data.get(j);
-                if (incr < min)
-                    min = incr;
-                if (incr > max)
-                    max = incr;
+                if (incr < min) min = incr;
+                if (incr > max) max = incr;
                 sum += incr;
                 j++;
             }
