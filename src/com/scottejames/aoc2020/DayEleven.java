@@ -22,7 +22,7 @@ public class DayEleven {
             grid=newGrid;
 
         }
-        grid.showGrid();
+       // grid.showGrid();
         System.out.println("Part 2 " + grid.getCharCount('#'));
 
     }
@@ -33,11 +33,11 @@ public class DayEleven {
                 Point p = new Point(i, j);
                 boolean endOfRow = false;
 
-                int neighbourCount = grid.checkNeighbours(p,'#');
 
                 char current = grid.getInGrid(p);
 
                 if (current != '.'){
+                    int neighbourCount = grid.checkNeighbours(p,'#');
                     if ((current == 'L') && (neighbourCount==0)){
                         newGrid.setInGrid(p,'#');
                     } else if ((current == '#') && (neighbourCount >= 4)){
@@ -57,11 +57,11 @@ public class DayEleven {
                 Point p = new Point(i, j);
                 boolean endOfRow = false;
 
-                int neighbourCount = grid.canSeeNeighbours(p);
 
                 char current = grid.getInGrid(p);
 
                 if (current != '.'){
+                    int neighbourCount = grid.canSeeNeighbours(p);
                     if ((current == 'L') && (neighbourCount==0)){
                         newGrid.setInGrid(p,'#');
                     } else if ((current == '#') && (neighbourCount >= 5)){
