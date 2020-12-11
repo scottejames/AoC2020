@@ -13,8 +13,6 @@ public class DayTen {
         System.out.println(partOne(data));
         System.out.println(partTwo(data));
 
-
-
     }
 
     public static int partOne(List<Integer> data){

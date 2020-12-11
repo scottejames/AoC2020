@@ -47,6 +47,15 @@ public class FileHelper {
         return result;
 
     }
+    public char[][] getFileAsCharArray() {
+        List<char[]> resultsList = new ArrayList<>();
+
+        for (String line : fileData) {
+            resultsList.add(line.toCharArray());
+        }
+        return resultsList.toArray(new char[0][0]);
+    }
+
     public List<String[]> getFileLinesSplit(String delimiter) {
         List<String[]> result = new ArrayList<>();
 
