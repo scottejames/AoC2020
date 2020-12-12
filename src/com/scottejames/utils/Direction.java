@@ -17,12 +17,36 @@ public enum Direction {
     public static Direction getByDirCode(char code) {
         return Arrays.stream(values()).filter(e -> e.code == code).findAny().get();
     }
+    public static Direction getByDir(char code) {
+        return Arrays.stream(values()).filter(e -> e.name().charAt(0) == code).findAny().get();
+    }
 
-    public Direction turn(boolean right) {
-        int cur = ordinal() + (right ? 1 : -1);
-        if (cur == Direction.values().length) cur = 0;
-        else if (cur == -1) cur = 3;
-        return Direction.values()[cur];
+    public Direction turnNintyDegrees(boolean right) {
+        if (right){
+            switch (this){
+                case NORTH:
+                    return EAST;
+                case EAST:
+                    return SOUTH;
+                case SOUTH:
+                    return WEST;
+                case WEST:
+                    return NORTH;
+            }
+        } else {
+            switch (this) {
+                case NORTH:
+                    return WEST;
+                case WEST:
+                    return SOUTH;
+                case SOUTH:
+                    return EAST;
+                case EAST:
+                    return NORTH;
+            }
+        }
+        System.out.println("ERROR");
+       return null;
     }
 
     public Point move(Point currentLocation, int amount) {
