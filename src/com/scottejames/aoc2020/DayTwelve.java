@@ -15,7 +15,7 @@ public class DayTwelve {
         List<String> data = fh.getFileAsList();
        // partOne(data);
         partTwo(data);
-        
+
     }
     private static void partTwo(List<String> data) {
         Point ship = new Point(0, 0);
