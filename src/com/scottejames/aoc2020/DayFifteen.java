@@ -15,13 +15,13 @@ public class DayFifteen {
         }
 
         while (turn <= target) {
-            int i = history[last];
-            int n = 0;
-            if (i == 0) n = 0;
-            else  n = turn - i - 1;
+            int lastSeen = history[last];
+            int speak = 0;
+            if (lastSeen == 0) speak = 0;
+            else  speak = turn - lastSeen - 1;
             history[last] = turn -1;
             turn++;
-            last = n;
+            last = speak;
         }
         System.out.println(last);
     }
