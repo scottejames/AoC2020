@@ -19,7 +19,8 @@ public class DayFifteen {
             int n = 0;
             if (i == 0) n = 0;
             else  n = turn - i - 1;
-            history[last] = turn++ -1;
+            history[last] = turn -1;
+            turn++;
             last = n;
         }
         System.out.println(last);
