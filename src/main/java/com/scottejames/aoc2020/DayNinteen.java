@@ -28,6 +28,50 @@ public class DayNinteen {
         }
         System.out.println("Part 1 : " + count);
 
+        List<String> t42 = matchRule(42,rules);
+        List<String> t31 = matchRule(31,rules);
+
+        for (int j = 0; j < testData.size(); j++){
+            String test = testData.get(j);
+            String check;
+
+            check = test.substring(0, 8);
+            if (!t42.contains(check)){
+                testData.remove(test);
+                j--;
+            }
+            check = test.substring(8, 16);
+            if (!t42.contains(check)){
+                testData.remove(test);
+                j--;
+            }
+            check = test.substring(test.length()-8);
+            if (!t31.contains(check)){
+                testData.remove(test);
+                j--;
+            }
+
+            check = test.substring(16,test.length()-8);
+            int count0 = 0;
+            int count1 = 0;
+            while (check.length() > 0 && t42.contains(check.substring(0, 8))){
+                check = check.substring(8);
+                count0++;
+            }
+            while (check.length() > 0 && t31.contains(check.substring(0, 8))){
+                check = check.substring(8);
+                count1++;
+            }
+            if (check.length() > 0 || count1 > count0){
+                testData.remove(test);
+                j--;
+            }
+        }
+        System.out.println("PartTwo: " + testData.size());
+
+
+
+
     }
 
     public static List<String> loadTests(List<String> data){
