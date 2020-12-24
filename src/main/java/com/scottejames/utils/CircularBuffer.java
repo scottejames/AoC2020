@@ -53,8 +53,6 @@ public class CircularBuffer<T> {
         return node;
     }
 
-
-
     @Override
     public String toString() {
         StringBuffer prefix = new StringBuffer();

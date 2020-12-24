@@ -34,7 +34,7 @@ public class DayForteen {
         for (String[] value: memory.values()){
             String num = joinString(value);
             BigInteger i = new BigInteger(num,2);
-            result = result.add(i);
+            result =    result.add(i);
         }
         System.out.println("Part 1: " + result);
 
